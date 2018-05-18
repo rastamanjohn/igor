@@ -3,7 +3,7 @@ import json
 import random
 from datetime import datetime
 from typing import Optional, List
-
+import time
 import requests
 from telegram import Message, Chat, Update, Bot, MessageEntity
 from telegram import ParseMode
@@ -401,6 +401,7 @@ RUNS_HANDLER = DisableAbleCommandHandler("runs", runs)
 SLAP_HANDLER = DisableAbleCommandHandler("slap", slap, pass_args=True)
 INFO_HANDLER = DisableAbleCommandHandler("info", info, pass_args=True)
 
+PING_HANDLER = DisableAbleCommandHandler("ping", ping)
 ECHO_HANDLER = CommandHandler("echo", echo, filters=Filters.user(OWNER_ID))
 MD_HELP_HANDLER = CommandHandler("markdownhelp", markdown_help, filters=Filters.private)
 
@@ -408,6 +409,7 @@ STATS_HANDLER = CommandHandler("stats", stats, filters=CustomFilters.sudo_filter
 GDPR_HANDLER = CommandHandler("gdpr", gdpr, filters=Filters.private)
 
 dispatcher.add_handler(ID_HANDLER)
+dispatcher.add_handler(PING_HANDLER)
 dispatcher.add_handler(IP_HANDLER)
 dispatcher.add_handler(TIME_HANDLER)
 dispatcher.add_handler(RUNS_HANDLER)
