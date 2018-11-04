@@ -35,8 +35,7 @@ def check_flood(bot: Bot, update: Update) -> str:
 
     try:
         chat.kick_member(user.id)
-        msg.reply_text("I like to leave the flooding to natural disasters. But you, you were just a "
-                       "disappointment. Get out.")
+        msg.reply_text("That's one too many, get out.")
 
         return "<b>{}:</b>" \
                "\n#BANNED" \
@@ -45,7 +44,7 @@ def check_flood(bot: Bot, update: Update) -> str:
                                              mention_html(user.id, user.first_name))
 
     except BadRequest:
-        msg.reply_text("I can't kick people here, give me permissions first! Until then, I'll disable antiflood.")
+        msg.reply_text("I need permission to kick people before you can enable this.")
         sql.set_flood(chat.id, 0)
         return "<b>{}:</b>" \
                "\n#INFO" \
