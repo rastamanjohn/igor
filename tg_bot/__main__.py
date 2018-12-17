@@ -29,7 +29,7 @@ Feel free to submit pull requests on github, or to contact my support group, @An
 or feature requests you might have :)
 You can find the list of available commands with /help.
 
-If you're enjoying using me, and/or would like to help me survive in the wild, hit /donate to help fund/upgrade my VPS!
+If you're enjoying using me and would like to help out, please hit /donate
 """
 
 HELP_STRINGS = """
@@ -50,10 +50,7 @@ the things I can help you with.
 And the following:
 """.format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
-DONATE_STRING = """Heya, glad to hear you want to donate!
-It took lots of work for [my coder](t.me/SonOfLars) to get me to where I am now, and every donation helps \
-motivate him to make me even better.(see his bio!). He's just a poor student, so every little helps!
-There are two ways of paying him; [PayPal](paypal.me/PaulSonOfLars), or [Monzo](monzo.me/paulnionvestergaardlarsen)."""
+DONATE_STRING = """Heya, glad to hear you want to donate! My owner is not currently accepting donations. You can always help support the wounded warriors project at https://www.woundedwarriorproject.org/."""
 
 IMPORTED = {}
 MIGRATEABLE = []
