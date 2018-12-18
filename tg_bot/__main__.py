@@ -50,7 +50,7 @@ the things I can help you with.
 And the following:
 """.format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
-DONATE_STRING = """Heya, glad to hear you want to donate! My owner is not currently accepting donations. You can always help support the wounded warriors project at https://www.woundedwarriorproject.org/."""
+DONATE_STRING = """Heya, glad to hear you want to donate! My owner is not currently accepting donations but you can always help support the wounded warriors project at https://www.woundedwarriorproject.org/."""
 
 IMPORTED = {}
 MIGRATEABLE = []
