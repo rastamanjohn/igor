@@ -146,7 +146,7 @@ def new_member(bot: Bot, update: Update):
 
                 #Add "I'm not bot button if enabled hard security"
                 if sql.welcome_security(chat.id) == "hard":
-                    update.effective_message.reply_text("Hi {}, click on button below to prove you're human.".format(new_mem.first_name), 
+                    update.effective_message.reply_text("Hi {}, click on the button below to prove you're human.".format(new_mem.first_name), 
                          reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="I'm not a bot!", 
                          callback_data="check_bot_({})".format(new_mem.id)) ]]))
                     #Mute user
