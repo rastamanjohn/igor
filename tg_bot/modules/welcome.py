@@ -146,12 +146,14 @@ def new_member(bot: Bot, update: Update):
 
                 #Add "I'm not bot button if enabled hard security"
                 if sql.welcome_security(chat.id) == "hard":
-                    update.effective_message.reply_text("Hi {}, click on the button below to prove you're human.".format(new_mem.first_name), 
-                         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="I'm not a bot!", 
-                         callback_data="check_bot_({})".format(new_mem.id)) ]]))
-                    #Mute user
-                    bot.restrict_chat_member(chat.id, new_mem.id, can_send_messages=False, can_send_media_messages=False, can_send_other_messages=False, can_add_web_page_previews=False)
-
+                    try:
+                        #Mute user
+                        bot.restrict_chat_member(chat.id, new_mem.id, can_send_messages=False, can_send_media_messages=False, can_send_other_messages=False, can_add_web_page_previews=False)
+                        update.effective_message.reply_text("Hi {}, click on the button below to prove you're human.".format(new_mem.first_name), 
+                            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="I'm not a bot!", 
+                            callback_data="check_bot_({})".format(new_mem.id)) ]]))
+                    except BadRequest:
+                        update.effective_message.reply_text("I need permission to mute people for welcomesecurity to work :/")
 
         prev_welc = sql.get_clean_pref(chat.id)
         if prev_welc:
