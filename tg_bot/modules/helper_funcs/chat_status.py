@@ -121,7 +121,7 @@ def user_admin(func):
             update.effective_message.delete()
 
         else:
-            update.effective_message.reply_text("Get outta here non-admin!")
+            update.effective_message.reply_text("Who's this non admin telling me what to do?!")
 
     return is_admin
 
